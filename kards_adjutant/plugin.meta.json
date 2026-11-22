@@ -1,0 +1,146 @@
+{
+  "build_env": {
+    "arch": "AMD64",
+    "os": "win32",
+    "python": "3.11"
+  },
+  "entries": [
+    {
+      "auto_start": false,
+      "description": "主人正在玩 KARDS（二战卡牌游戏）时，凡问到「能不能斩杀／这回合最多打多少伤害／能不能打死他／帮我看下场面」一类问题就调用此工具。不要向主人索要截图——插件会自动截取当前屏幕：先让视觉模型把局面转录成数据，再用纯代码穷举本回合所有攻击顺序，结论会推送给角色去说。调用成功后不要自己复算或改数字，也不要复述完整路线（角色会说），最多一句简短确认。主人问的不是 KARDS 时不要调用。",
+      "event_key": "kards_adjutant.lethal_check",
+      "event_type": "plugin_entry",
+      "id": "lethal_check",
+      "input_schema": {
+        "properties": {},
+        "type": "object"
+      },
+      "kind": "action",
+      "llm_result_fields": [
+        "pushed",
+        "headline"
+      ],
+      "llm_result_schema": {
+        "properties": {
+          "headline": {},
+          "pushed": {}
+        },
+        "required": [
+          "pushed",
+          "headline"
+        ],
+        "type": "object"
+      },
+      "metadata": {},
+      "model_validate": true,
+      "name": "KARDS 斩杀计算",
+      "return_message": "",
+      "timeout": 150.0
+    }
+  ],
+  "entries_config_sha256": "",
+  "entry_methods": {
+    "lethal_check": "lethal_check"
+  },
+  "handlers": {
+    "kards_adjutant.lethal_check": {
+      "auto_start": false,
+      "description": "主人正在玩 KARDS（二战卡牌游戏）时，凡问到「能不能斩杀／这回合最多打多少伤害／能不能打死他／帮我看下场面」一类问题就调用此工具。不要向主人索要截图——插件会自动截取当前屏幕：先让视觉模型把局面转录成数据，再用纯代码穷举本回合所有攻击顺序，结论会推送给角色去说。调用成功后不要自己复算或改数字，也不要复述完整路线（角色会说），最多一句简短确认。主人问的不是 KARDS 时不要调用。",
+      "dynamic": false,
+      "enabled": true,
+      "event_type": "plugin_entry",
+      "extra": {},
+      "id": "lethal_check",
+      "input_schema": {
+        "properties": {},
+        "type": "object"
+      },
+      "kind": "action",
+      "llm_result_fields": [
+        "pushed",
+        "headline"
+      ],
+      "llm_result_schema": {
+        "properties": {
+          "headline": {},
+          "pushed": {}
+        },
+        "required": [
+          "pushed",
+          "headline"
+        ],
+        "type": "object"
+      },
+      "metadata": {},
+      "model_validate": true,
+      "name": "KARDS 斩杀计算",
+      "persist": null,
+      "quick_action": true,
+      "quick_action_config": {
+        "icon": "⚔️",
+        "priority": 3
+      },
+      "timeout": 150.0
+    },
+    "kards_adjutant:plugin_entry:lethal_check": {
+      "auto_start": false,
+      "description": "主人正在玩 KARDS（二战卡牌游戏）时，凡问到「能不能斩杀／这回合最多打多少伤害／能不能打死他／帮我看下场面」一类问题就调用此工具。不要向主人索要截图——插件会自动截取当前屏幕：先让视觉模型把局面转录成数据，再用纯代码穷举本回合所有攻击顺序，结论会推送给角色去说。调用成功后不要自己复算或改数字，也不要复述完整路线（角色会说），最多一句简短确认。主人问的不是 KARDS 时不要调用。",
+      "dynamic": false,
+      "enabled": true,
+      "event_type": "plugin_entry",
+      "extra": {},
+      "id": "lethal_check",
+      "input_schema": {
+        "properties": {},
+        "type": "object"
+      },
+      "kind": "action",
+      "llm_result_fields": [
+        "pushed",
+        "headline"
+      ],
+      "llm_result_schema": {
+        "properties": {
+          "headline": {},
+          "pushed": {}
+        },
+        "required": [
+          "pushed",
+          "headline"
+        ],
+        "type": "object"
+      },
+      "metadata": {},
+      "model_validate": true,
+      "name": "KARDS 斩杀计算",
+      "persist": null,
+      "quick_action": true,
+      "quick_action_config": {
+        "icon": "⚔️",
+        "priority": 3
+      },
+      "timeout": 150.0
+    }
+  },
+  "schema_version": 5,
+  "sdk_version": "0.1.0",
+  "source_bytes": 65781,
+  "source_files": [
+    "__init__.py",
+    "board_read.py",
+    "card_db.py",
+    "config.schema.json",
+    "docs/CARDS.md",
+    "i18n/en.json",
+    "i18n/es.json",
+    "i18n/ja.json",
+    "i18n/ko.json",
+    "i18n/pt.json",
+    "i18n/ru.json",
+    "i18n/zh-CN.json",
+    "i18n/zh-TW.json",
+    "lethal_solver.py",
+    "plugin.toml"
+  ],
+  "source_sha256": "155b7757463c24df9b71c146417a894ab2b1c79ddd145266bda273c6695ac143"
+}

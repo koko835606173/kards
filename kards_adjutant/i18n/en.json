@@ -1,0 +1,4 @@
+{
+  "plugin.name": "KARDS Adjutant",
+  "plugin.description": "In-turn lethal math for KARDS: captures the live screen, asks the bound vision model for this turn's maximum damage and the play order, and pushes the verdict straight into chat. Advice only — never plays for you."
+}

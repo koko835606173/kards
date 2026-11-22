@@ -1,0 +1,4 @@
+{
+  "plugin.name": "Adjutante de KARDS",
+  "plugin.description": "Cálculo de letal en KARDS durante tu turno: captura la pantalla, el modelo de visión vinculado calcula el daño máximo del turno y el orden de juego, y el veredicto aparece directamente en el chat. Solo aconseja, nunca juega por ti."
+}

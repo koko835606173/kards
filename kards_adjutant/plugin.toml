@@ -1,0 +1,35 @@
+[plugin]
+name = "KARDS 斩杀副官"
+description = "KARDS 游戏副官：回合内一键斩杀计算。自动截取当前屏幕，交给绑定的视觉模型算出本回合最大伤害与出牌顺序，结论直接推进聊天。只提醒解说，绝不代打。"
+short_description = "KARDS adjutant: in-turn lethal calculation from a live screen capture."
+keywords = ["kards", "斩杀", "lethal", "副官", "adjutant", "卡牌", "伤害计算", "card game"]
+version = "0.1.0"
+id = "kards_adjutant"
+entry = "plugin.plugins.kards_adjutant:KardsAdjutantPlugin"
+
+[plugin.author]
+name = "koko"
+
+[plugin.sdk]
+recommended = ">=0.1.0,<0.2.0"
+supported = ">=0.1.0,<0.3.0"
+
+[plugin.i18n]
+default_locale = "zh-CN"
+locales_dir = "i18n"
+
+[plugin.models.lethal_vision]
+label = "斩杀计算视觉模型"
+description = "读取 KARDS 画面并计算本回合最大伤害的视觉模型，需要图片输入能力。建议绑定识数准、响应快的模型。"
+required = true
+capabilities = ["text", "image_input"]
+
+[plugin_runtime]
+enabled = true
+auto_start = false
+
+[kards]
+screenshot_max_edge_px = 1600
+screenshot_jpeg_quality = 85
+vision_max_tokens = 1400
+solver_node_limit = 200000
